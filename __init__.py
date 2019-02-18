@@ -33,8 +33,8 @@ class GrimmsTales(MycroftSkill):
     def initialize(self):
         self.is_reading = False
         self.lang_url = {'da': 'https://www.grimmstories.com/da/grimm_eventyr/',
-                         'en': 'https://www.grimmstories.com/de/grimm_maerchen/',
-                         'de': 'https://www.grimmstories.com/en/grimm_fairy-tales/',
+                         'de': 'https://www.grimmstories.com/de/grimm_maerchen/',
+                         'en': 'https://www.grimmstories.com/en/grimm_fairy-tales/',
                          'es': 'https://www.grimmstories.com/es/grimm_cuentos/',
                          'fr': 'https://www.grimmstories.com/fr/grimm_contes/',
                          'it': 'https://www.grimmstories.com/it/grimm_fiabe/',
