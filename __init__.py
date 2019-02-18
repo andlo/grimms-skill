@@ -56,7 +56,7 @@ class GrimmsTales(MycroftSkill):
         self.bus.emit(Message("storytelling.register", {"register": 'register'}))
         story = message.data.get("story")
         result = match_one(story, list(self.index.keys()))
-        if result[1] < 0.8:
+        if result[1] < 0.1:
             return
         else:
             self.log.info('sendig to messagebs')
@@ -88,8 +88,8 @@ class GrimmsTales(MycroftSkill):
             self.is_reading = False
             self.settings['bookmark'] = 0
             self.settings['story'] = None
-            time.sleep(2)
-            self.speak_dialog('from_GrimmsTales')
+            # time.sleep(2)
+            # self.speak_dialog('from_GrimmsTales')
 
     def stop(self):
         self.log.info('stop is called')
@@ -123,6 +123,7 @@ class GrimmsTales(MycroftSkill):
         for link in soup.find_all("a"):
             index.update({link.text: link.get("href")})
         return index
+
 
 def create_skill():
     return GrimmsTales()
